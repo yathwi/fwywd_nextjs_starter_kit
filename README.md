@@ -8,7 +8,8 @@ Git から Clone 後に必要なパッケージのインストールを行いま
 yarn install
 ```
 
-> 2022/03/15 現在 storybook の依存パッケージの部分で問題が起きています。npm 経由でインストールを行うと「X 件の高い脆弱性が発見されました（found X high severity vulnerabilities）」と警告がでます。yarn ではこの問題を自動的に解消してくれるため **yarn の利用**を推奨しています。
+> **Note**  
+> npm でも動作しますが **yarn の利用**を推奨しています。
 
 ## サーバーの立ち上げ
 
@@ -40,7 +41,8 @@ yarn test
 
 ### バージョン情報
 
-主なパッケージのバージョンは以下の通りです。
+主なパッケージのバージョンは以下の通りです。  
+2022/05/25 時点の最新版で設定されています。
 
 - TypeScript：4.6.4
 - React：18.1.0
@@ -54,6 +56,37 @@ yarn test
 - Plop：3.1.0
 - Jest：28.1.0
 - React Testing Library：13.2.0
+
+> **Note**  
+> 最新版のパッケージへアップグレードが必要な場合は `yarn upgrade --latest` を実行すると良いでしょう。
+
+### コンポーネントの雛形
+
+[PLOP](https://plopjs.com/) を使って Parts, Templates, Views のコンポーネント開発に必要な雛形が自動的に生成できるように設定してあります。以下のコマンドで対話的にコンポーネントの雛形が作成できるため試してみましょう。
+
+```bash
+yarn generate
+```
+
+PLOP の設定は `generator` ディレクトリを確認してください。
+
+各種コンポーネントを切り分ける基準は以下の通りです。
+
+|           | API 通信    | グローバル State | Style | 依存関係         |
+| --------- | ----------- | ---------------- | ----- | ---------------- |
+| Parts     | ×           | ×                | ○     | parts            |
+| Templates | △           | ○                | ○     | parts, templates |
+| Views     | ○（client） | ○                | △     | parts, templates |
+| Pages     | ○（ssr）    | ×                | ×     | views            |
+
+> **Note**  
+> Templates と Views では雛形として以下は作成しませんが、必要に応じて作成してください。
+>
+> - Container Component のテスト：`index.test.tsx`
+> - Custom Hooks：`hooks.ts` or `hooks.tsx`
+> - Custom Hooks のテスト：`hooks.test.ts` or `hooks.test.tsx`
+>
+> Custom Hooks は `src/hook` ディレクトリで扱うことが多いと予想して、各コンポーネント内では雛形を自動で作成しないようにしています。
 
 ### Form
 
@@ -70,16 +103,6 @@ GitHub Actions での CI/CD が標準で設定されています。`main` ブラ
 ### ESLint/Prettier
 
 [Next.js が推奨する方法](https://nextjs.org/docs/basic-features/eslint)を基本として設定しています。VSCode で保存時に Prettier が適用されるようにもなっているので便利です。ESLint の設定は `.eslintrc` に、Prettier の設定は `package.json` に記載されています。
-
-### コンポーネントの雛形
-
-[PLOP](https://plopjs.com/) を使って Atomic デザインのコンポーネント開発に必要な雛形が自動的に生成できるように設定してあります。以下のコマンドで対話的にコンポーネントの雛形が作成できるため試してみましょう。
-
-```bash
-yarn generate
-```
-
-PLOP の設定は `generator` ディレクトリを確認してください。
 
 ## プロジェクト
 
@@ -132,35 +155,28 @@ kikagaku-next-starter-kit
 ```bash
 ./src
 ├── component
-│   ├── atom
-│   │   └── [ComponentName]
-│   │        ├── index.tsx                    # barrel
-│   │        ├── [ComponentName].tsx          # Component
-│   │        └── [ComponentName].stories.tsx  # Storybook
-│   ├── molecule
-│   │   └── [ComponentName]
-│   │        ├── index.tsx                    # barrel
-│   │        ├── [ComponentName].tsx          # Component
-│   │        ├── [ComponentName].type.ts      # Prop Types
-│   │        ├── [ComponentName].props.ts     # props for Test & Storybook
-│   │        ├── [ComponentName].test.tsx     # Test
-│   │        └── [ComponentName].stories.tsx  # Storybook
-│   ├── organism
-│   │   └── [ComponentName]
-│   │        ├── index.tsx                    # barrel
-│   │        ├── [ComponentName].tsx          # Component
-│   │        ├── [ComponentName].type.ts      # Prop Types
-│   │        ├── [ComponentName].props.ts     # props for Test & Storybook
-│   │        ├── [ComponentName].test.tsx     # Test
-│   │        └── [ComponentName].stories.tsx  # Storybook
-│   └── template
-│   │   └── [ComponentName]
-│   │        ├── index.tsx                    # Container Component
-│   │        ├── [ComponentName].tsx          # Presentational Component
-│   │        ├── [ComponentName].type.ts      # Presentational Component's Prop Types
-│   │        ├── [ComponentName].props.ts     # Presentational props for Test & Storybook
-│   │        ├── [ComponentName].test.tsx     # Test for Presentational Component
-│   │        └── [ComponentName].stories.tsx  # Storybook
+│   ├── README.md
+│   └── [ProjectName]
+│       │── part
+│       │   └── [ComponentName]
+│       │       ├── index.tsx                   # Presentational Component
+│       │       ├── [ComponentName].test.tsx    # Test for Pres. Component
+│       │       ├── [ComponentName].props.ts    # Props for Test & SB
+│       │       └── [ComponentName].stories.tsx # Storybook (SB)
+│       ├── template
+│       │   └── [ComponentName]
+│       │       ├── index.tsx                   # Container Component
+│       │       ├── [ComponentName].tsx         # Presentational Component
+│       │       ├── [ComponentName].test.tsx    # Test for Pres. Component
+│       │       ├── [ComponentName].props.ts    # Props for Test & SB
+│       │       └── [ComponentName].stories.tsx # Storybook (SB)
+│       └── view
+│           └── [ComponentName]
+│               ├── index.tsx                   # Container Component
+│               ├── [ComponentName].tsx         # Presentational Component
+│               ├── [ComponentName].test.tsx    # Test for Pres. Component
+│               ├── [ComponentName].props.ts    # Props for Test & SB
+│               └── [ComponentName].stories.tsx # Storybook (SB)
 ├── pages
 │   ├── _app.tsx
 │   └── index.tsx
