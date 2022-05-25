@@ -33,8 +33,8 @@ module.exports = (plop) => {
             // component
             {
               type: 'add',
-              path: path + '{{pascalCase name}}/index.ts',
-              templateFile: 'template/part.index.ts.hbs',
+              path: path + '{{pascalCase name}}/index.tsx',
+              templateFile: 'template/part.index.tsx.hbs',
             },
             // props for test and storybook
             {
