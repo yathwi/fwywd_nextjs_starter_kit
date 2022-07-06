@@ -3,135 +3,122 @@ module.exports = (plop) => {
     description: 'Create a component',
     prompts: [
       {
-        type: 'input',
-        name: 'projectName',
-        message:
-          'What is the project name? => src/component/{projectName}/{dirname}/{name}  ※ atom・molecule・page を作る場合は入力不要です。Enter で進んでください。',
-      },
-      {
         type: 'list',
-        name: 'atomic',
-        message: 'Choose atomic?',
+        name: 'type',
+        message: 'Which type name is it? => src/component/${project}/${type}/${component} :',
         choices: [
-          { name: 'atom', value: 'atom' },
-          { name: 'molecule', value: 'molecule' },
-          { name: 'project', value: 'project' },
-          { name: 'page', value: 'page' },
+          { name: 'part', value: 'part' },
+          { name: 'template', value: 'template' },
+          { name: 'view', value: 'view' },
         ],
       },
       {
         type: 'input',
+        name: 'project',
+        message:
+          'What is a project name? => src/component/${project}/${type}/${component} * 共通は common :',
+      },
+      {
+        type: 'input',
         name: 'name',
-        message: 'What is the component {name}? => src/component/{atomic}/{dirname}/{name}',
+        message: 'What is a component name? => src/component/${project}/${type}/${component} :',
       },
     ],
     actions: (data) => {
-      const path = `../src/component/${data.atomic}/`;
-      let projectName = data.projectName.toLowerCase();
-      if (!data.projectName) projectName = 'project';
-      const projectPath = `../src/component/${projectName}/`;
+      const path = `../src/component/${data.project}/${data.type}/`;
 
-      switch (data.atomic) {
-        case 'atom':
+      switch (data.type) {
+        case 'part':
           return [
+            // component
             {
               type: 'add',
-              path: path + '{{pascalCase name}}/index.ts',
-              templateFile: 'template/atom.index.ts.hbs',
+              path: path + '{{pascalCase name}}/index.tsx',
+              templateFile: 'template/part.index.tsx.hbs',
             },
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-              templateFile: 'template/atom.component.tsx.hbs',
-            },
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.type.ts',
-              templateFile: 'template/atom.type.ts.hbs',
-            },
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-              templateFile: 'template/atom.stories.tsx.hbs',
-            },
-          ];
-        case 'molecule':
-          return [
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/index.ts',
-              templateFile: 'template/molecule.index.ts.hbs',
-            },
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-              templateFile: 'template/molecule.component.tsx.hbs',
-            },
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.type.ts',
-              templateFile: 'template/molecule.type.ts.hbs',
-            },
+            // props for test and storybook
             {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
-              templateFile: 'template/molecule.props.ts.hbs',
+              templateFile: 'template/part.props.ts.hbs',
             },
+            // test
             {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
-              templateFile: 'template/molecule.test.tsx.hbs',
+              templateFile: 'template/part.test.tsx.hbs',
             },
+            // storybook
             {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-              templateFile: 'template/molecule.stories.tsx.hbs',
+              templateFile: 'template/part.stories.tsx.hbs',
             },
           ];
-        case 'project':
+        case 'template':
           return [
+            // container
             {
               type: 'add',
-              path: projectPath + '{{pascalCase name}}/index.tsx',
-              templateFile: 'template/project.index.tsx.hbs',
+              path: path + '{{pascalCase name}}/index.tsx',
+              templateFile: 'template/common.container.tsx.hbs',
             },
+            // presenter
             {
               type: 'add',
-              path: projectPath + '{{pascalCase name}}/{{pascalCase name}}.tsx',
-              templateFile: 'template/project.component.tsx.hbs',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
+              templateFile: 'template/common.presenter.tsx.hbs',
             },
+            // test for presenter
             {
               type: 'add',
-              path: projectPath + '{{pascalCase name}}/{{pascalCase name}}.type.ts',
-              templateFile: 'template/project.type.ts.hbs',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+              templateFile: 'template/common.presenter.test.tsx.hbs',
             },
+            // props for test and storybook
             {
               type: 'add',
-              path: projectPath + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
-              templateFile: 'template/project.props.ts.hbs',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
+              templateFile: 'template/common.props.ts.hbs',
             },
+            // storybook
             {
               type: 'add',
-              path: projectPath + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
-              templateFile: 'template/project.test.tsx.hbs',
-            },
-            {
-              type: 'add',
-              path: projectPath + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-              templateFile: 'template/project.stories.tsx.hbs',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+              templateFile: 'template/common.stories.tsx.hbs',
             },
           ];
-        case 'page':
+        case 'view':
           return [
+            // container
             {
               type: 'add',
-              path: '../src/pages/{{kebabCase name}}.tsx',
-              templateFile: 'template/page.tsx.hbs',
+              path: path + '{{pascalCase name}}/index.tsx',
+              templateFile: 'template/common.container.tsx.hbs',
             },
+            // presenter
             {
               type: 'add',
-              path: '../src/__test__/unit/page/{{pascalCase name}}.test.tsx',
-              templateFile: 'template/page.test.tsx.hbs',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.tsx',
+              templateFile: 'template/common.presenter.tsx.hbs',
+            },
+            // test for presenter
+            {
+              type: 'add',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+              templateFile: 'template/common.presenter.test.tsx.hbs',
+            },
+            // props for test and storybook
+            {
+              type: 'add',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
+              templateFile: 'template/common.props.ts.hbs',
+            },
+            // storybook
+            {
+              type: 'add',
+              path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+              templateFile: 'template/common.stories.tsx.hbs',
             },
           ];
         default:
