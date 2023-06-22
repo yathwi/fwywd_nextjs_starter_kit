@@ -1,10 +1,13 @@
 import { useRouter } from 'next/router';
 const header = [
   { name: 'ホーム', path: '/' },
-  { name: '会社概要', path: '/' },
-  { name: '事業内容', path: '/' },
-  { name: '物件紹介□', path: '/' },
-  { name: 'お問い合せ', path: '/' },
+  { name: '会社概要', path: 'company' },
+  { name: '事業内容', path: 'service' },
+  {
+    name: '物件紹介□',
+    path: 'https://asp.athome.jp/065007/shumoku?direct_search=true&shubetsu=baibai',
+  },
+  { name: 'お問い合せ', path: 'contact' },
 ];
 export const PageHeader: React.FC = () => {
   const router = useRouter();
@@ -20,7 +23,7 @@ export const PageHeader: React.FC = () => {
               <li
                 key={item.name}
                 onClick={() => router.push(item.path)}
-                className=' list-none px-3'
+                className=' cursor-pointer list-none px-3 hover:underline'
               >
                 {item.name}
               </li>

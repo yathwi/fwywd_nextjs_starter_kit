@@ -6,10 +6,13 @@ import { Info } from '@/component/info';
 import { PageHeader } from '@/component/pageHeader';
 
 const items = [
-  { name: '会社概要', path: '/' },
-  { name: '事業内容', path: '/' },
-  { name: '物件紹介', path: '/' },
-  { name: 'お問い合せ', path: '/' },
+  { name: '会社概要', path: 'company' },
+  { name: '事業内容', path: 'service' },
+  {
+    name: '物件紹介□',
+    path: 'https://asp.athome.jp/065007/shumoku?direct_search=true&shubetsu=baibai',
+  },
+  { name: 'お問い合せ', path: 'contact' },
 ];
 
 const Home: React.FC = () => {
