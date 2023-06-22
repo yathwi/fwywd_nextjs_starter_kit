@@ -1,6 +1,9 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    backgroundImage: {
+      'hero-pc': "url('/img/hero2.jpg')",
+    },
     fontWeight: {
       light: 300,
       normal: 400,
