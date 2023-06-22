@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const Footer: React.FC = () => (
   <div className=' bg-[#4d4d4d]  py-5 text-white'>
     <div className=' mx-auto max-w-[80%] '>
@@ -7,7 +9,9 @@ export const Footer: React.FC = () => (
       <p>TEL:052-972-7871 / FAX:052-972-7872</p>
       <p>愛知知事(2)第23317号</p>
       <div className=' mt-3 flex justify-between  text-sm font-light'>
-        <p>プライバシーポリシー</p>
+        <Link href='/privacy-policy'>
+          <a className=' hover:underline'>プライバシーポリシー</a>
+        </Link>
         <p>@2019プロジェクトジャパン</p>
       </div>
     </div>
