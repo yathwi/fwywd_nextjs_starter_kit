@@ -4,6 +4,7 @@ module.exports = {
     backgroundImage: {
       'hero-pc': "url('/img/hero2.jpg')",
     },
+
     fontWeight: {
       light: 300,
       normal: 400,
@@ -47,7 +48,11 @@ module.exports = {
       xl: '1.875rem',
       '2xl': '2.25rem',
     },
-    extend: {},
+    extend: {
+      textShadow: {
+        white: '2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-textshadow')],
 };

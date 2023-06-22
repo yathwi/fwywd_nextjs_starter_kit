@@ -8,7 +8,7 @@ const Company: React.FC = () => (
       <title>会社概要</title>
     </Head>
     <PageHeader />
-    <h1 className=' mt-5 text-center text-xl '>会社概要</h1>
+    <h1 className=' mt-10 text-center text-xl '>会社概要</h1>
     <div className=' mt-5 text-center'>
       <p>
         プロジェクトジャパンは不動産の総合コンサルタントとして
