@@ -92,8 +92,11 @@ const ContactForm = () => {
                 onChange={(e) => setDetails(e.target.value)}
               />
             </div>
-
-            <button type='submit'>送信</button>
+            <div className=' mt-5 flex justify-end'>
+              <button className=' rounded-lg bg-[#4d4d4d] px-7 py-3 text-white' type='submit'>
+                送信
+              </button>
+            </div>
           </form>
         </div>
       </div>
