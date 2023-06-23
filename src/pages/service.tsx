@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { Footer } from '@/component/fotter';
 import { PageHeader } from '@/component/pageHeader';
 
@@ -18,10 +18,10 @@ const Service = () => (
       <div className=' mt-10'>
         <div className=' flex justify-center'>
           <div className=' mr-10'>
-            <Image src='/img/hero2.jpg' width={500} height={300} alt='service1' />
+            <Image src='/img/realEstate.jpg' width={500} height={300} alt='service1' />
           </div>
           <div>
-            <h2 className='mb-3 text-2xl font-bold'>01 不動産の売買・賃貸仲介</h2>
+            <h2 className='mb-3 font-zen_gothic text-2xl'>01 不動産の売買・賃貸仲介</h2>
             <p className=' text-lg'>
               売りたい・買いたい・貸したい・借りたい
               <br />
@@ -41,7 +41,7 @@ const Service = () => (
             <p className=' text-lg'>低コストな工事を実現いたします。</p>
           </div>{' '}
           <div className=' ml-10'>
-            <Image src='/img/hero2.jpg' width={500} height={300} alt='service1' />
+            <Image src='/img/construction.jpg' width={500} height={300} alt='service1' />
           </div>
         </div>
       </div>

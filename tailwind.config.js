@@ -4,7 +4,9 @@ module.exports = {
     backgroundImage: {
       'hero-pc': "url('/img/hero2.jpg')",
     },
-
+    fontFamily: {
+      zen_gothic: ['var(--zen-gothic)'],
+    },
     fontWeight: {
       light: 300,
       normal: 400,
