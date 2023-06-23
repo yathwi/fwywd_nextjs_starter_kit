@@ -15,7 +15,7 @@ export const PageHeader: React.FC = () => {
     <div className='bg-[#4d4d4d]  py-3 font-bold text-white'>
       <div className=' mx-auto max-w-[80%]'>
         <div className=' flex items-center justify-between'>
-          <div onClick={() => router.push('/')} className=' cursor-pointer text-xl'>
+          <div onClick={() => router.push('/')} className=' cursor-pointer font-crossten text-xl'>
             PROJECT JAPAN
           </div>
           <nav className=' flex'>

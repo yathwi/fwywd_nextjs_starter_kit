@@ -5,7 +5,9 @@ module.exports = {
       'hero-pc': "url('/img/hero2.jpg')",
     },
     fontFamily: {
-      zen_gothic: ['var(--zen-gothic)'],
+      zen_gothic: ['var(--zen_gothic)'],
+      sawarabi: ['var(--font-sawarabi_gothic)'],
+      crossten: ['Crossten'],
     },
     fontWeight: {
       light: 300,

@@ -18,7 +18,7 @@ const items = [
 const Home: React.FC = () => {
   const router = useRouter();
   return (
-    <div>
+    <div className=' font-zen_gothic'>
       <Head>
         <title>株式会社プロジェクトジャパン</title>
       </Head>
