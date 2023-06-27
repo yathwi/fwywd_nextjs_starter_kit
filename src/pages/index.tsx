@@ -31,7 +31,7 @@ const Home: React.FC = () => {
               <button
                 key={item.name}
                 onClick={() => router.push(item.path)}
-                className=' mx-5 my-2 h-20 w-72 rounded-lg border border-white bg-primary-green text-center text-2xl font-bold text-white hover:bg-[#48A80E] '
+                className=' mx-5 my-2 h-20 w-72 rounded-lg border border-white bg-primary-green px-5 text-center text-2xl font-bold text-white hover:bg-[#48A80E] '
               >
                 {item.name}
               </button>
