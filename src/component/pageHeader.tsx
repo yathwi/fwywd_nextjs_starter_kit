@@ -12,7 +12,7 @@ const header = [
 export const PageHeader: React.FC = () => {
   const router = useRouter();
   return (
-    <div className='bg-[#4d4d4d]  py-3 font-bold text-white'>
+    <div className='bg-primary-blue  py-3 font-light text-white'>
       <div className=' mx-auto max-w-[80%]'>
         <div className=' flex items-center justify-between'>
           <div onClick={() => router.push('/')} className=' cursor-pointer font-crossten text-xl'>

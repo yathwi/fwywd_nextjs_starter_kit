@@ -22,23 +22,23 @@ const Home: React.FC = () => {
       <Head>
         <title>株式会社プロジェクトジャパン</title>
       </Head>
-      <div className=' h-screen'>
+      <div className=''>
         <PageHeader />
         <Hero />
-        <Info />
-        <div className=' flex h-auto justify-center py-7'>
-          <div className=' grid grid-cols-2'>
+        <div className=' -mt-40 flex h-auto justify-center py-7'>
+          <div className=' flex'>
             {items.map((item) => (
               <button
                 key={item.name}
                 onClick={() => router.push(item.path)}
-                className=' mx-5 my-2 h-20 w-72 rounded-lg border border-[#333333] bg-[#808080] text-center text-2xl font-bold text-white hover:opacity-80'
+                className=' mx-5 my-2 h-20 w-72 rounded-lg border border-white bg-primary-green text-center text-2xl font-bold text-white hover:bg-[#48A80E] '
               >
                 {item.name}
               </button>
             ))}
           </div>
-        </div>
+        </div>{' '}
+        <Info />
         <Footer />
       </div>
     </div>

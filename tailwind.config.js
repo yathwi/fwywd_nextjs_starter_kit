@@ -2,7 +2,7 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     backgroundImage: {
-      'hero-pc': "url('/img/hero2.jpg')",
+      'hero-pc': "url('/img/hero3.jpg')",
     },
     fontFamily: {
       zen_gothic: ['var(--zen_gothic)'],
@@ -25,6 +25,8 @@ module.exports = {
         700: '#199898',
         800: '#007979',
         900: '#004747',
+        blue: '#054C9E',
+        green: '#347E06',
       },
       pink: {
         50: '#FCF8FA',

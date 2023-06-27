@@ -93,7 +93,10 @@ const ContactForm = () => {
               />
             </div>
             <div className=' mt-5 flex justify-end'>
-              <button className=' rounded-lg bg-[#4d4d4d] px-7 py-3 text-white' type='submit'>
+              <button
+                className=' rounded-lg bg-primary-green px-7 py-3 text-white hover:bg-[#48A80E]'
+                type='submit'
+              >
                 送信
               </button>
             </div>

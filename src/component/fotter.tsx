@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const Footer: React.FC = () => (
-  <div className=' bg-[#4d4d4d]  py-5 text-white'>
+  <div className=' bg-primary-blue  py-5 text-white'>
     <div className=' mx-auto max-w-[80%] '>
       <p className=' text-lg font-bold'>株式会社プロジェクトジャパン</p>
       <p>〒461-0005</p>
