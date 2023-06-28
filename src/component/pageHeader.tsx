@@ -17,7 +17,7 @@ export const PageHeader: React.FC = () => {
   return (
     <>
       <div className=' bg-primary-blue  py-3 font-light text-white  '>
-        <div className=' pc:max-w-[80%] mx-auto hidden sm:block'>
+        <div className=' mx-auto hidden sm:block sm:max-w-[80%]'>
           <div className=' flex items-center justify-between'>
             <div onClick={() => router.push('/')} className=' cursor-pointer font-crossten text-xl'>
               PROJECT JAPAN
@@ -40,7 +40,7 @@ export const PageHeader: React.FC = () => {
           </div>
         </div>
 
-        <div className=' pc:hidden '>
+        <div className=' sm:hidden '>
           <div className='mx-auto flex max-w-[90%] items-center justify-between'>
             <div onClick={() => router.push('/')} className=' cursor-pointer font-crossten text-xl'>
               PROJECT JAPAN
