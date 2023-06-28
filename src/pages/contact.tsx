@@ -12,7 +12,12 @@ const ContactForm = () => {
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
+    setName('');
+    setEmail('');
+    setPhone('');
+    setAddress('');
+    setInquiry('');
+    setDetails('');
     const response = await fetch('/api/send-email', {
       method: 'POST',
       body: JSON.stringify({
@@ -32,7 +37,7 @@ const ContactForm = () => {
     const data = await response.json();
 
     if (data.status === 'Ok') {
-      alert('メール送信成功');
+      alert('お問い合わせ完了');
     }
   };
 
