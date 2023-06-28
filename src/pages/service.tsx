@@ -16,32 +16,40 @@ const Service = () => (
       </div>
 
       <div className=' mt-10'>
-        <div className=' flex justify-center'>
-          <div className=' mr-10'>
+        <div className=' justify-center sm:flex'>
+          <div className=' sm:mr-10'>
             <Image src='/img/realEstate.jpg' width={500} height={300} alt='service1' />
           </div>
           <div>
-            <h2 className='mb-3 font-sawarabi text-2xl'>01 不動産の売買・賃貸仲介</h2>
-            <p className=' text-lg'>
+            <h2 className='mb-3 font-sawarabi text-lg sm:text-2xl'>01 不動産の売買・賃貸仲介</h2>
+            <p className=' sm:text-lg'>
               売りたい・買いたい・貸したい・借りたい
               <br />
               すべて弊社にご相談ください。
             </p>
-            <p className=' text-lg'>需要と供給を繋ぎます。</p>
+            <p className=' sm:text-lg'>需要と供給を繋ぎます。</p>
           </div>
         </div>
 
-        <div className=' mt-16 flex justify-center'>
-          <div>
-            <h2 className='mb-3 font-sawarabi text-2xl'>02 解体・地中埋設物撤去</h2>
-            <p className=' text-lg'>
+        <div className=' mt-16 justify-center sm:flex'>
+          <div className=' hidden sm:block'>
+            <h2 className='mb-3 font-sawarabi text-lg sm:text-2xl'>02 解体・地中埋設物撤去</h2>
+            <p className=' sm:text-lg'>
               弊社提携の解体業事業者や <br />
               産業廃棄物処理業者により、
             </p>
-            <p className=' text-lg'>低コストな工事を実現いたします。</p>
-          </div>{' '}
-          <div className=' ml-10'>
+            <p className=' sm:text-lg'>低コストな工事を実現いたします。</p>
+          </div>
+          <div className=' sm:ml-10'>
             <Image src='/img/construction.jpg' width={500} height={300} alt='service1' />
+          </div>
+          <div className=' block sm:hidden'>
+            <h2 className='mb-3 font-sawarabi text-lg sm:text-2xl'>02 解体・地中埋設物撤去</h2>
+            <p className=' sm:text-lg'>
+              弊社提携の解体業事業者や <br />
+              産業廃棄物処理業者により、
+            </p>
+            <p className=' sm:text-lg'>低コストな工事を実現いたします。</p>
           </div>
         </div>
       </div>

@@ -53,56 +53,56 @@ const ContactForm = () => {
             各項目をご入力いただき送信ボタンをクリックしてください。
           </p>
         </div>
-        <div className='my-10 flex justify-center'>
+        <div className='my-10 flex sm:justify-center'>
           <form onSubmit={handleFormSubmit}>
             <div className='mt-3 flex items-center'>
-              <p className='mr-5 w-40 text-right'>お名前 (必須)</p>
+              <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>お名前 (必須)</p>
               <input
                 type='text'
                 value={name}
-                className='h-10 w-[500px] border px-2'
+                className='h-10 w-full border px-2 sm:w-[500px]'
                 onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
 
             <div className='mt-3 flex items-center'>
-              <p className='mr-5 w-40 text-right'>メールアドレス (必須)</p>
+              <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>メールアドレス (必須)</p>
               <input
                 type='email'
                 value={email}
-                className='h-10 w-[500px] border px-2'
+                className='h-10 w-full border px-2 sm:w-[500px]'
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
 
             <div className='mt-3 flex items-center'>
-              <p className='mr-5 w-40 text-right'>お電話番号 (必須)</p>
+              <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>お電話番号 (必須)</p>
               <input
                 type='tel'
                 value={phone}
-                className='h-10 w-[500px] border px-2'
+                className='h-10 w-full border px-2 sm:w-[500px]'
                 onChange={(e) => setPhone(e.target.value)}
                 required
               />
             </div>
 
             <div className='mt-3 flex items-center'>
-              <p className='mr-5 w-40 text-right'>ご住所</p>
+              <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>ご住所</p>
               <input
                 type='text'
                 value={address}
-                className='h-10 w-[500px] border px-2'
+                className='h-10 w-full border px-2 sm:w-[500px]'
                 onChange={(e) => setAddress(e.target.value)}
               />
             </div>
 
             <div className='mt-3 flex items-center'>
-              <p className='mr-5 w-40 text-right'>お問い合わせ内容</p>
+              <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>お問い合わせ内容</p>
               <select
                 value={inquiry}
-                className='h-10 w-[500px] border px-2'
+                className='h-10 w-full border px-2 sm:w-[500px]'
                 onChange={(e) => setInquiry(e.target.value)}
               >
                 <option value=''>選択してください</option>
@@ -112,11 +112,11 @@ const ContactForm = () => {
             </div>
 
             <div className='mt-3 flex '>
-              <p className='mr-5 w-40 text-right'>お問合せ詳細</p>
+              <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>お問合せ詳細</p>
               <textarea
                 rows={10}
                 value={details}
-                className='w-[500px] border px-2'
+                className='w-full border px-2 sm:w-[500px]'
                 onChange={(e) => setDetails(e.target.value)}
               />
             </div>

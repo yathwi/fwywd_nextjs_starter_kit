@@ -1,17 +1,23 @@
 import { GoogleMap, LoadScript, Marker, MarkerF } from '@react-google-maps/api';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const MapContainer = () => {
-  const mapStyles = {
-    height: '100vh',
-    width: '100%',
-  };
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const markerLabel: google.maps.MarkerLabel = {
     text: 'PROJECT JAPAN',
     fontFamily: 'sans-serif',
     fontSize: '15px',
     fontWeight: 'bold',
+  };
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const mapStyles = {
+    height: windowWidth < 640 ? '50vh' : '100vh',
+    width: '100%',
   };
 
   const defaultCenter = {
