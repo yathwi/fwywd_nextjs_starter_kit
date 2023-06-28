@@ -25,13 +25,13 @@ const Home: React.FC = () => {
       <div className=''>
         <PageHeader />
         <Hero />
-        <div className=' -mt-40 flex h-auto justify-center py-7'>
-          <div className=' flex'>
+        <div className=' -mt-72 flex h-auto justify-center py-7 sm:-mt-60'>
+          <div className=' grid grid-cols-2 sm:flex'>
             {items.map((item) => (
               <button
                 key={item.name}
                 onClick={() => router.push(item.path)}
-                className=' mx-5 my-2 h-20 w-72 rounded-lg border border-white bg-primary-green px-5 text-center text-2xl font-bold text-white hover:bg-[#48A80E] '
+                className=' mx-5 my-2 h-16 w-40 rounded-lg border border-white bg-primary-green px-5 text-center font-bold text-white hover:bg-[#48A80E] sm:h-20 sm:w-72 sm:text-2xl '
               >
                 {item.name}
               </button>

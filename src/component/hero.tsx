@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
   return (
     <div className=' h-[650px] bg-hero-pc bg-cover bg-center'>
       <div className=' relative'>
-        <div className=' relative z-10 ml-[10%] flex pt-32'>
+        <div className=' relative z-10 ml-[10%] flex pt-20 sm:pt-32'>
           <h1 className=' text-[48px] font-bold text-shadow-white'>
             不動産の売買・土地の仲介
             <br />
