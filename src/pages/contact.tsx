@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { Footer } from '@/component/fotter';
 import { PageHeader } from '@/component/pageHeader';
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -9,8 +10,30 @@ const ContactForm = () => {
   const [inquiry, setInquiry] = useState('');
   const [details, setDetails] = useState('');
 
-  const handleFormSubmit = (e: any) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        address,
+        inquiry,
+        details,
+      }),
+      headers: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.status === 'Ok') {
+      alert('メール送信成功');
+    }
   };
 
   return (
