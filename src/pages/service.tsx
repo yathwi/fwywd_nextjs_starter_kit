@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Image from 'next/legacy/image';
 import { Footer } from '@/component/fotter';
 import { PageHeader } from '@/component/pageHeader';
-
 const Service = () => (
   <div>
     <Head>
