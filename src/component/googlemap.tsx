@@ -22,7 +22,7 @@ const MapContainer = () => {
 
   const mapStyles = {
     // windowWidthがnullでない場合のみ条件演算子を評価
-    height: windowWidth && windowWidth < 640 ? '50vh' : '100vh',
+    height: windowWidth && windowWidth < 640 ? '50vh' : '70vh',
     width: '100%',
   };
 
@@ -33,7 +33,7 @@ const MapContainer = () => {
 
   return (
     <LoadScript googleMapsApiKey='AIzaSyDECFb7CKhkTxCU8ZXHYZCZj1mp_Dw8_sg'>
-      <GoogleMap mapContainerStyle={mapStyles} zoom={15} center={defaultCenter}>
+      <GoogleMap mapContainerStyle={mapStyles} zoom={16} center={defaultCenter}>
         <Marker position={defaultCenter} label={markerLabel} />
       </GoogleMap>
     </LoadScript>
