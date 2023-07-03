@@ -12,7 +12,7 @@ export const Footer: React.FC = () => (
         <Link href='/privacy-policy' className=' hover:underline'>
           プライバシーポリシー
         </Link>
-        <p>@2019プロジェクトジャパン</p>
+        <p>©︎2023プロジェクトジャパン</p>
       </div>
     </div>
   </div>

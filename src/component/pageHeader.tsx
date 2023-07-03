@@ -1,12 +1,13 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { BiLinkExternal } from 'react-icons/bi';
 import { RxHamburgerMenu } from 'react-icons/rx';
 const header = [
   { name: 'ホーム', path: '/' },
   { name: '会社概要', path: 'company' },
   { name: '事業内容', path: 'service' },
   {
-    name: '物件紹介□',
+    name: '物件紹介',
     path: 'https://asp.athome.jp/065007/shumoku?direct_search=true&shubetsu=baibai',
   },
   { name: 'お問い合せ', path: 'contact' },
@@ -23,13 +24,18 @@ export const PageHeader: React.FC = () => {
               PROJECT JAPAN
             </div>
             <nav className=' flex'>
-              {header.map((item) => (
+              {header.map((item, i: number) => (
                 <li
                   key={item.name}
                   onClick={() => router.push(item.path)}
-                  className=' cursor-pointer list-none px-3 hover:underline'
+                  className=' flex cursor-pointer list-none items-center px-3 hover:underline'
                 >
                   {item.name}
+                  {i === 3 && (
+                    <label>
+                      <BiLinkExternal size={20} />
+                    </label>
+                  )}
                 </li>
               ))}
             </nav>
