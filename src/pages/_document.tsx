@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel='icon' href='/img/PJ_logo.png' type='image/x-icon' />
+          <link rel='icon' href='/img/PJ_logo2.png' type='image/x-icon' />
         </Head>
         <body>
           <Main />

@@ -47,7 +47,7 @@ const Company: React.FC = () => (
             </tr>
             <tr>
               <th className='w-[35%] border-b border-black bg-primary-green py-5 text-white sm:w-60'>
-                電話番号
+                電話番号/FAX
               </th>
               <td className='border-b pl-5 sm:w-[650px]'>052-972-7871 / 052-972-7872</td>
             </tr>

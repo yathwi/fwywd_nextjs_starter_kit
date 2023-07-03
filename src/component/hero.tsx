@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { use } from 'react';
 import { Info } from './info';
+
 const items = [
   { name: '会社概要', path: 'company' },
   { name: '事業内容', path: 'service' },

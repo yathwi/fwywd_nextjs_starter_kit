@@ -22,7 +22,7 @@ const MapContainer = () => {
 
   const mapStyles = {
     // windowWidthがnullでない場合のみ条件演算子を評価
-    height: windowWidth && windowWidth < 640 ? '50vh' : '70vh',
+    height: windowWidth && windowWidth < 640 ? '50vh' : '50vh',
     width: '100%',
   };
 
