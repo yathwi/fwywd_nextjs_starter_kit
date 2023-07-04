@@ -13,7 +13,6 @@ const Service = () => (
         <h1 className=' mt-10 text-xl'>事業内容</h1>
         <p className=' mt-5'>不動産に関するサービスを提供しています。</p>
       </div>
-
       <div className=' mt-10'>
         <div className=' justify-center sm:flex'>
           <div className=' sm:mr-10'>
