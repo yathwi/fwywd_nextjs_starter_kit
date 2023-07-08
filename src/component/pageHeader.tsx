@@ -61,13 +61,18 @@ export const PageHeader: React.FC = () => {
                 <RxHamburgerMenu size={35} color='black' />
               </div>
               <nav className=' '>
-                {header.map((item) => (
+                {header.map((item, i: number) => (
                   <li
                     key={item.name}
                     onClick={() => router.push(item.path)}
-                    className=' cursor-pointer list-none border-b py-3 pl-5 text-black hover:underline'
+                    className=' flex cursor-pointer list-none items-center border-b py-3 pl-5 text-black hover:underline'
                   >
                     {item.name}
+                    {i === 3 && (
+                      <label>
+                        <BiLinkExternal size={20} />
+                      </label>
+                    )}
                   </li>
                 ))}
               </nav>

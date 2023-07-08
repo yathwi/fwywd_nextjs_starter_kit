@@ -19,13 +19,33 @@ export const Hero: React.FC = () => {
     <div className=' h-[650px] bg-hero-pc bg-cover bg-center'>
       <div className=' relative'>
         <div className=' relative z-10 ml-[10%] flex pt-20 sm:pt-32'>
-          <h1 className=' text-[48px] font-bold text-shadow-white'>
-            不動産の売買・土地の仲介
+          <h1 className=' hidden text-[48px] font-bold text-shadow-white sm:block'>
+            {/* 不動産の売買・土地の仲介
             <br />
             不動産のご相談
             <br />
-            承ります
+            承ります  */}
+            <Image
+              src='/img/heroText.png'
+              width={600}
+              height={300}
+              alt='不動産の売買・土地の仲介不動産のご相談承ります'
+            />
           </h1>
+          <h1 className=' block text-[48px] font-bold text-shadow-white sm:hidden'>
+            {/* 不動産の売買・土地の仲介
+            <br />
+            不動産のご相談
+            <br />
+            承ります  */}
+            <Image
+              src='/img/heroTextSm.png'
+              width={320}
+              height={250}
+              alt='不動産の売買・土地の仲介不動産のご相談承ります'
+            />
+          </h1>
+
           <div></div>
         </div>
       </div>

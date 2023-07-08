@@ -59,7 +59,6 @@ module.exports = {
         white: '2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white',
       },
     },
-   
   },
   plugins: [require('tailwindcss-textshadow')],
 };
