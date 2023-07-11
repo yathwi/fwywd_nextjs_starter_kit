@@ -18,7 +18,7 @@ const ContactForm = () => {
     setAddress('');
     setInquiry('');
     setDetails('');
-    const response = await fetch('/api/send-email', {
+    const response = await fetch('/api/sendgrid', {
       method: 'POST',
       body: JSON.stringify({
         name,

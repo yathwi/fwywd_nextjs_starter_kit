@@ -37,24 +37,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     問い合わせ詳細: ${details}
   `,
     });
-    await transporter.sendMail({
-      from: 'yasui-kaito@outlook.jp',
-      to: email, // 受け取りたいメールアドレス
-      subject: `お問い合わせありがとうございます。`,
-      text: `この度はお問い合わせいただき誠にありがとうございます。
-    以下の内容でお問い合わせを受け付けました。
-    ■ 新規問い合わせがありました。
-    ------------------------
-    名前: ${name}
-    Email: ${email}
-    電話番号: ${phone}
-    住所: ${address}
-    問い合わせ内容: ${inquiry}
-    問い合わせ詳細: ${details}
-    ------------------------
-    このメールは 株式会社プロジェクトジャパンのお問い合わせフォームから送信されました
-  `,
-    });
+    //   await transporter.sendMail({
+    //     from: 'yasui-kaito@outlook.jp',
+    //     to: email, // 受け取りたいメールアドレス
+    //     subject: `お問い合わせありがとうございます。`,
+    //     text: `この度はお問い合わせいただき誠にありがとうございます。
+    //   以下の内容でお問い合わせを受け付けました。
+    //   ■ 新規問い合わせがありました。
+    //   ------------------------
+    //   名前: ${name}
+    //   Email: ${email}
+    //   電話番号: ${phone}
+    //   住所: ${address}
+    //   問い合わせ内容: ${inquiry}
+    //   問い合わせ詳細: ${details}
+    //   ------------------------
+    //   このメールは 株式会社プロジェクトジャパンのお問い合わせフォームから送信されました
+    // `,
+    //   });
 
     res.status(200).json({ status: 'Ok' });
   } else {
