@@ -10,7 +10,7 @@ const items = [
   { name: '会社概要', path: 'company' },
   { name: '事業内容', path: 'service' },
   {
-    name: '物件紹介□',
+    name: '物件紹介',
     path: 'https://asp.athome.jp/065007/shumoku?direct_search=true&shubetsu=baibai',
   },
   { name: 'お問い合せ', path: 'contact' },
@@ -32,12 +32,12 @@ const Home: React.FC = () => {
               <button
                 key={item.name}
                 onClick={() => router.push(item.path)}
-                className=' mx-5 my-2 h-16 w-36 rounded-lg border border-white bg-primary-green px-5 text-center font-bold text-white hover:bg-[#48A80E] sm:h-20 sm:w-60 sm:text-2xl '
+                className=' mx-5 my-2 flex h-16 w-36 items-center  rounded-lg border border-white bg-primary-green px-5 text-center font-bold text-white hover:bg-[#48A80E] sm:h-20 sm:w-60 sm:text-2xl '
               >
                 {item.name}{' '}
-                {i === 3 && (
+                {i === 2 && (
                   <label>
-                    <BiLinkExternal size={20} />
+                    <BiLinkExternal size={40} />
                   </label>
                 )}
               </button>
