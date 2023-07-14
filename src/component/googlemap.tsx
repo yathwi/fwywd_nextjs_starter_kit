@@ -14,7 +14,7 @@ const MapContainer = () => {
   }, []);
 
   const markerLabel: google.maps.MarkerLabel = {
-    text: 'PROJECT JAPAN',
+    text: '',
     fontFamily: 'sans-serif',
     fontSize: '15px',
     fontWeight: 'bold',

@@ -26,15 +26,15 @@ const Home: React.FC = () => {
       <div className=''>
         <PageHeader />
         <Hero />
-        <div className=' -mt-72 flex h-auto justify-center py-7 sm:-mt-60'>
-          <div className=' grid grid-cols-2 sm:flex'>
+        <div className='-mt-72 flex h-auto justify-center py-7 sm:-mt-60'>
+          <div className='grid grid-cols-2 items-center justify-center sm:flex'>
             {items.map((item, i: number) => (
               <button
                 key={item.name}
                 onClick={() => router.push(item.path)}
-                className=' mx-5 my-2 flex h-16 w-36 items-center  rounded-lg border border-white bg-primary-green px-5 text-center font-bold text-white hover:bg-[#48A80E] sm:h-20 sm:w-60 sm:text-2xl '
+                className='mx-5 my-2 flex h-16 w-36 items-center justify-center rounded-lg border border-white bg-primary-green px-5 text-center font-bold text-white hover:bg-[#48A80E] sm:h-20 sm:w-60 sm:text-2xl'
               >
-                {item.name}{' '}
+                {item.name}
                 {i === 2 && (
                   <label>
                     <BiLinkExternal size={40} />

@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>{' '}
       <Info /> */}
-      <div> </div>
+      <div></div>
     </div>
   );
 };
