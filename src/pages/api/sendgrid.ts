@@ -6,8 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method === 'POST') {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const sgMail = require('@sendgrid/mail');
-    sgMail.setApiKey('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'); //SendGridのAPIキー
-
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       to: email,
       from: 'yasui-kaito@outlook.jp',
