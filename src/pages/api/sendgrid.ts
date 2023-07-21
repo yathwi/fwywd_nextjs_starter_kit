@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       to: email,
-      from: 'yasui-kaito@outlook.jp',
+      from: 'office@project.-japan.co.jp',
       subject: 'お問合せありがとうございました。',
       text: `お問合せを受け付けました。回答をお待ちください。${name}, ${email}, ${phone}, ${address}, ${inquiry}, ${details}`,
       html: `お問合せを受け付けました。回答をお待ちください。
