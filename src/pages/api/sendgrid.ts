@@ -8,8 +8,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
-      to: email,
-      from: 'office@project.-japan.co.jp',
+      to: [email, 'office@project-japan.co.jp'],
+      from: 'office@project-japan.co.jp',
       subject: 'お問合せありがとうございました。',
       text: `お問合せを受け付けました。回答をお待ちください。${name}, ${email}, ${phone}, ${address}, ${inquiry}, ${details}`,
       html: `お問合せを受け付けました。回答をお待ちください。
@@ -21,17 +21,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       お問い合わせ詳細：${details}`,
     };
 
-    (async () => {
-      try {
-        await sgMail.send(msg);
-      } catch (error) {
-        console.error(error);
-        if (error) {
-          console.error(error);
-        }
-      }
-    })();
+    try {
+      await sgMail.send(msg);
+      res.status(200).json({ message: 'Email sent successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Failed to send email' });
+    }
+  } else {
+    res.status(405).json({ error: 'Method not allowed' });
   }
-
-  res.status(200);
 }
