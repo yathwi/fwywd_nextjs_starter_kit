@@ -9,6 +9,7 @@ const ContactForm = () => {
   const [address, setAddress] = useState('');
   const [inquiry, setInquiry] = useState('');
   const [details, setDetails] = useState('');
+  const [isSetApply, setIsApply] = useState(false);
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const ContactForm = () => {
     setAddress('');
     setInquiry('');
     setDetails('');
+    setIsApply(true);
     const response = await fetch('/api/sendgrid', {
       method: 'POST',
       body: JSON.stringify({
@@ -55,6 +57,9 @@ const ContactForm = () => {
         </div>
         <div className='my-10 flex sm:justify-center'>
           <form onSubmit={handleFormSubmit}>
+            {isSetApply && (
+              <p className=' text-center font-bold text-primary-blue '>送信完了しました。</p>
+            )}
             <div className='mt-3 flex items-center'>
               <p className='mr-2 w-[40%] text-right sm:mr-5 sm:w-40'>お名前 (必須)</p>
               <input
