@@ -13,13 +13,6 @@ const MapContainer = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const markerLabel: google.maps.MarkerLabel = {
-    text: '',
-    fontFamily: 'sans-serif',
-    fontSize: '15px',
-    fontWeight: 'bold',
-  };
-
   const mapStyles = {
     // windowWidthがnullでない場合のみ条件演算子を評価
     height: windowWidth && windowWidth < 640 ? '50vh' : '50vh',
@@ -31,10 +24,13 @@ const MapContainer = () => {
     lng: 136.90949856995942, // 会社の経度
   };
 
+  // 赤いピンのアイコンURL
+  const iconUrl = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+
   return (
     <LoadScript googleMapsApiKey='AIzaSyDECFb7CKhkTxCU8ZXHYZCZj1mp_Dw8_sg'>
       <GoogleMap mapContainerStyle={mapStyles} zoom={16} center={defaultCenter}>
-        <Marker position={defaultCenter} label={markerLabel} />
+        <Marker position={defaultCenter} icon={iconUrl} />
       </GoogleMap>
     </LoadScript>
   );

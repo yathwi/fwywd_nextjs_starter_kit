@@ -4,7 +4,7 @@ export const Info: React.FC = () => (
       <p className=' mr-4 font-bold text-white'>NEWS</p>
       <p className=' w-[80%] rounded-lg  bg-white py-1 pl-3 sm:w-[40%]'>
         {' '}
-        2023/11/1 サイトリニューアル
+        2023/7/15 サイトリニューアル
       </p>
     </div>
   </div>
