@@ -11,14 +11,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       to: [email, 'office@project-japan.co.jp'],
       from: 'office@project-japan.co.jp',
       subject: 'お問合せありがとうございました。',
-      text: `お問合せを受け付けました。回答をお待ちください。${name}, ${email}, ${phone}, ${address}, ${inquiry}, ${details}`,
-      html: `お問合せを受け付けました。回答をお待ちください。
-      氏名：${name}, 
-      メールアドレス：${email}, 
-      電話番号：${phone}, 
-      住所：${address}, 
-      お問い合わせ内容：${inquiry}, 
-      お問い合わせ詳細：${details}`,
+      text: `お問合せを受け付けました。回答をお待ちください。\n氏名：${name}\nメールアドレス：${email}\n電話番号：${phone}\n住所：${address}\nお問い合わせ内容：${inquiry}\nお問い合わせ詳細：${details}`,
+      html: `お問合せを受け付けました。回答をお待ちください。<br>
+      氏名：${name}<br>
+      メールアドレス：${email}<br>
+      電話番号：${phone}<br>
+      住所：${address}<br>
+      お問い合わせ内容：${inquiry}<br>
+      お問い合わせ詳細：${details}<br>`,
     };
 
     try {
