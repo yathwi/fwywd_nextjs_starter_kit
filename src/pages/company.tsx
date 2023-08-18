@@ -39,7 +39,7 @@ const Company: React.FC = () => (
                 所在地
               </th>
               <td className='border-b px-5 pb-3 sm:w-[650px]'>
-                <p>愛知県名古屋市東区一丁目10番29号</p>
+                <p>愛知県名古屋市東区東桜一丁目10番29号</p>
                 <p>パークサイドビル栄9A</p>
                 <div>Googleマップ</div>
                 <MapContainer />
