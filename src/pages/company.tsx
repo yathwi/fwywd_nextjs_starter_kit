@@ -17,7 +17,7 @@ const Company: React.FC = () => (
           <br />
           お客様の不動産パートナーになれるよう日々精進しております。
         </p>
-        <p>土地建設の売買から賃貸物件のご紹介などご要望に応じて最善な提案をします。</p>
+        <p>土地建物の売買から賃貸物件のご紹介などご要望に応じて最善な提案をします。</p>
       </div>
       <div className=' my-10 flex justify-center'>
         <table className='mx-auto border'>
