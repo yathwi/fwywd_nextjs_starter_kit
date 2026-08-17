@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { name, email, phone, address, inquiry, details } = req.body;
   if (req.method === 'POST') {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+     
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {

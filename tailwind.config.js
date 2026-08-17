@@ -1,3 +1,17 @@
+const plugin = require('tailwindcss/plugin');
+
+// theme.extend.textShadow の各キーから .text-shadow-<key> ユーティリティを生成する。
+// 以前は tailwindcss-textshadow パッケージを使っていたが、2019年で更新が止まり
+// 脆弱性のある postcss 7 系を引き込むため、同等の処理をここに置いている。
+const textShadowPlugin = plugin(({ addUtilities, theme, e }) => {
+  const utilities = Object.entries(theme('textShadow', {})).map(([key, value]) => [
+    key === 'DEFAULT' ? '.text-shadow' : `.${e(`text-shadow-${key}`)}`,
+    { 'text-shadow': value },
+  ]);
+
+  addUtilities(Object.fromEntries(utilities));
+});
+
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -60,5 +74,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-textshadow')],
+  plugins: [textShadowPlugin],
 };

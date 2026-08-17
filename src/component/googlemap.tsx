@@ -1,21 +1,9 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const MapContainer = () => {
-  // サーバーサイドではwindowがundefinedなので、初期値としてnullを使用する
-  const [windowWidth, setWindowWidth] = useState<number | null>(null);
-  useEffect(() => {
-    // コンポーネントがマウントされたときにウィンドウの幅を設定
-    setWindowWidth(window.innerWidth);
-
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   const mapStyles = {
-    // windowWidthがnullでない場合のみ条件演算子を評価
-    height: windowWidth && windowWidth < 640 ? '50vh' : '50vh',
+    height: '50vh',
     width: '100%',
   };
 
