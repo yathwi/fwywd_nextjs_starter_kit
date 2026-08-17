@@ -9,7 +9,6 @@
     "plugin:testing-library/react",
     "plugin:import/recommended",
     "plugin:import/warnings",
-    "plugin:storybook/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   
@@ -45,14 +44,7 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
-      "rules": {
-        "storybook/hierarchy-separator": "error",
-        "storybook/default-exports": "off"
-      }
-    },
-    {
-      "files": ["src/pages/**/*.tsx", "**/*.js", "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+      "files": ["src/pages/**/*.tsx", "**/*.js"],
       "rules": { "import/no-default-export": "off" }
     }
   ]

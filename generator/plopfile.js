@@ -36,7 +36,7 @@ module.exports = (plop) => {
               path: path + '{{pascalCase name}}/index.tsx',
               templateFile: 'template/part.index.tsx.hbs',
             },
-            // props for test and storybook
+            // props for test
             {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
@@ -47,12 +47,6 @@ module.exports = (plop) => {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
               templateFile: 'template/part.test.tsx.hbs',
-            },
-            // storybook
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-              templateFile: 'template/part.stories.tsx.hbs',
             },
           ];
         case 'template':
@@ -75,17 +69,11 @@ module.exports = (plop) => {
               path: path + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
               templateFile: 'template/common.presenter.test.tsx.hbs',
             },
-            // props for test and storybook
+            // props for test
             {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
               templateFile: 'template/common.props.ts.hbs',
-            },
-            // storybook
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-              templateFile: 'template/common.stories.tsx.hbs',
             },
           ];
         case 'view':
@@ -108,17 +96,11 @@ module.exports = (plop) => {
               path: path + '{{pascalCase name}}/{{pascalCase name}}.test.tsx',
               templateFile: 'template/common.presenter.test.tsx.hbs',
             },
-            // props for test and storybook
+            // props for test
             {
               type: 'add',
               path: path + '{{pascalCase name}}/{{pascalCase name}}.props.ts',
               templateFile: 'template/common.props.ts.hbs',
-            },
-            // storybook
-            {
-              type: 'add',
-              path: path + '{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-              templateFile: 'template/common.stories.tsx.hbs',
             },
           ];
         default:
